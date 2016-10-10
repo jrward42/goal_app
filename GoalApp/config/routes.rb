@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :users, only: [:new, :show, :create]
+  resources :users, only: [:new, :show, :create, :index]
   resource :session, only: [:new, :create, :destroy]
+  get '/', to: 'sessions#new'
 end
