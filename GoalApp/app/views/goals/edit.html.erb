@@ -1,0 +1,23 @@
+<h1>Edit goal</h1>
+
+<form action="/goals" method="post">
+  <%= auth_token %>
+  <label for="Title">Title
+    <input id="Title" type="text" name="goal[title]" value="<%= @goal.title %>">
+  </label>
+  <br>
+  <label for="Details">Details
+  <textarea id="Details" name="goal[details]" rows="8" cols="40"><%= @goal.details %></textarea>
+  </label>
+  <br>
+  <label>Public?
+  <input type="checkbox" name="goal[visibility]" value="true" <%= 'checked' if @goal.visibility == 'true' %>>
+  </label>
+  <br>
+  <label>Completed?
+  <input type="checkbox" name="goal[finished]" value="true" <%= 'checked' if @goal.finished == 'true' %>>
+  </label>
+  <br>
+
+  <input type="submit" value="Edit goal">
+</form>

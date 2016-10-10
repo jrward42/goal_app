@@ -1,0 +1,23 @@
+<h1>New goal</h1>
+
+<form action="/goals" method="post">
+  <%= auth_token %>
+  <label for="Title">Title
+    <input type="text" name="goal[title]" id="Title">
+  </label>
+  <br>
+  <label for="Details">Details</label>
+  <textarea id="Details" name="goal[details]" rows="8" cols="40"></textarea>
+  <br>
+  <label>Public?
+  <input type="checkbox" name="goal[visibility]" value="true">
+  </label>
+  <br>
+  <label>Completed?
+  <input type="checkbox" name="goal[finished]" value="true">
+  </label>
+  <br>
+
+  <input type="submit" value="Create goal">
+
+</form>

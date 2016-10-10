@@ -1,0 +1,16 @@
+<ul>
+<% goals.each do |goal|%>
+
+<li><%= link_to goal.title, goal_url(goal)%>
+<br>
+<%= @goal.visibility == 'true' ? 'Public' : 'Private' %>
+<br>
+<%= @goal.finished == 'true' ? 'finished' : 'Ongoing' %>
+<br>
+<% if current_user == goal.user %>
+<%= button_to "Complete", method: :get %>
+<%= button_to "Delete", goal_url(goal), method: :delete  %>
+<% end  %>
+</li>
+<% end %>
+</ul>

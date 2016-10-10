@@ -56,5 +56,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create, :index]
   resource :session, only: [:new, :create, :destroy]
+  resources :goals
+    get"/goals/:id/complete", to: "goals#complete"
   get '/', to: 'sessions#new'
 end

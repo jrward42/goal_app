@@ -1,0 +1,9 @@
+<h1>Goal</h1>
+
+Title: <%= @goal.title %> <br>
+Details: <%= @goal.details %> <br>
+Visibility: <%= @goal.visibility == 'true' ? 'Public' : 'Private' %>
+Completed? <%= @goal.finished == 'true' ? 'Completed' : 'Ongoing' %>
+
+<%= link_to "Back to user", user_url(@goal.user_id) %>
+<%= button_to "Edit goal", edit_goal_url(@goal) if current_user == @goal.user%>
